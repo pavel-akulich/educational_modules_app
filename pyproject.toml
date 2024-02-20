@@ -1,0 +1,28 @@
+[tool.poetry]
+name = "educational-modules"
+version = "0.1.0"
+description = ""
+authors = ["Pavel Akulich <pavelakulich1999@gmail.com>"]
+readme = "README.md"
+packages = [{include = "educational_modules"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+django = "^4.2.7"
+psycopg2-binary = "^2.9.9"
+python-dotenv = "^1.0.1"
+djangorestframework = "^3.14.0"
+djangorestframework-simplejwt = "^5.3.1"
+drf-yasg = "^1.21.7"
+pillow = "^10.2.0"
+django-stubs = "^4.2.7"
+django-cors-headers = "^4.3.1"
+celery = "^5.3.6"
+redis = "^5.0.1"
+django-celery-beat = "^2.5.0"
+coverage = "^7.4.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
