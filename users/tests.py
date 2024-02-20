@@ -137,6 +137,7 @@ class UserSerializerTestCase(TestCase):
             'phone': '+123456789',
             'country': 'testCountry',
             'avatar': None,
+            'password': 'secure_password'
         }
 
     def test_user_serializer_save(self):
@@ -152,6 +153,7 @@ class UserSerializerTestCase(TestCase):
         self.assertEqual(user.phone, self.valid_data['phone'])
         self.assertEqual(user.country, self.valid_data['country'])
         self.assertEqual(user.avatar, self.valid_data['avatar'])
+        self.assertTrue(user.check_password(self.valid_data['password']))
 
 
 # Tests for User Permissions

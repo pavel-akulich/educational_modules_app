@@ -1,5 +1,5 @@
 from rest_framework import viewsets
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticated, AllowAny
 
 from educational_modules.permissions import IsSuperUser, IsModerator
 from users.models import User
@@ -25,12 +25,14 @@ class UserViewSet(viewsets.ModelViewSet):
         Returns:
             list: List of permission classes.
         """
-        if self.action == 'list':
+        if self.action == 'create':
+            permission_classes = [AllowAny]
+        elif self.action == 'list':
             permission_classes = [IsSuperUser | IsModerator]
         elif self.action == 'update' or self.action == 'partial_update':
             permission_classes = [IsSuperUser | IsOwner]
         elif self.action == 'destroy':
-            permission_classes = [IsSuperUser]
+            permission_classes = [IsSuperUser | IsOwner]
         elif self.action == 'retrieve':
             permission_classes = [IsSuperUser | IsOwner | IsModerator]
         else:
