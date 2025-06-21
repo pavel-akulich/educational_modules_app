@@ -1,6 +1,5 @@
 # The application "Educational modules"
 
-[Russian](../README.md) | **English**
 
 ## Project Description
 The application "Educational modules" is a backend part of an application created in the Python programming language using the Django REST framework.

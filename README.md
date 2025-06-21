@@ -1,48 +1,48 @@
-# Приложение "Образовательные модули"
+# The application "Educational modules"
 
-**Russian** | [English](docs_eng/README.md)
 
-## Описание проекта
-Приложение "Образовательные модули" представляет собой backend часть приложения, созданного на языке программирования Python с использованием Django REST framework.
-Данное приложение отлично подойдет для построения на его базе каких-либо обучающих платформ.
-Проект включает в себя backend-часть, ответственную за обработку данных и бизнес-логику.
+## Project Description
+The application "Educational modules" is a backend part of an application created in the Python programming language using the Django REST framework.
+This application is perfect for building any training platforms based on it.
+The project includes a backend part responsible for data processing and business logic.
 
-## Составляющие части проекта
+## Project Components
 
-Проект состоит из следующих компонентов:
+The project consists of the next components:
 
-1. **Приложение users:**
-    - Содержит модель для пользователей `User`
-    - Реализован механизм CRUD для модели `User`
-    - В файле `tasks.py` реализована задача отправки уведомлений пользователям, которые давно не заходили в приложение 
+1. **Users Application:**
+   - Contains a model for `User` users
+   - Implemented the CRUD mechanism for the `User` model
+   - In the file `tasks.py ` the task of sending notifications to users who have not logged into the application for a long time has been implemented
 
-2. **Приложение educational_modules:**
-   - Содержит модель модулей `Module` и модель уроков `Lesson`
-   - Содержит механизм CRUD для модели модулей и уроков 
-   - Реализована пагинация для удобства API запросов и снижения нагрузки на сервер
-   - Реализован логика, запрещающая пользователем создавать уроки к чужим модулям
+2. **Application educational_modules:**
+   - Contains the module model `Module` and the lesson model `Lesson`
+   - Contains a CRUD mechanism for model modules and lessons
+   - Implemented pagination for the convenience of API requests and reducing the load on the server
+   - Implemented logic that prohibits the user from creating lessons for other people's modules
 
-## Технологии
-   - Проект разработан на языке программирования `Python` с использованием `Django REST framework`
-   - Для работы с базой данных `PostgreSQL` используется сторонняя библиотека `psycopg2-binary`
-   - Для выполнения периодических задач(рассылки уведомлений) используется `Celery`
-   - Для проекта настроен `CORS`, чтобы frontend мог подключаться к проекту на развернутом сервере
-   - В проекте подключена API документация при помощи библиотеки `drf-yasg`
-   - Для большей стабильности проект покрыт автоматизированными юнит-тестами
-   - Для определения покрытия проекта тестами используется библиотека `coverage`
-   - Для управления виртуальным окружением используется инструмент `poetry`
-   - Для взаимодействия с переменными окружения применяется библиотека `python-dotenv`
-   - Для более легкого и простого развёртывания проекта при помощи `Docker` используется технология контейнеризации
+## Technologies
+   - The project is developed in the `Python` programming language using the `Django REST framework`
+   - To work with the `PostgreSQL` database, a third-party library `psycopg2-binary` is used
+   - `Celery` is used to perform periodic tasks (sending notifications)
+   - `CORS` is configured for the project so that frontend can connect to the project on a deployed server
+   - API documentation is connected to the project using the `drf-asg` library
+   - For more stability the project is covered with automated unit tests
+   - The `coverage` library is used to determine the test coverage of the project
+   - The `poetry` tool is used to manage the virtual environment
+   - The `python-dotenv` library is used to interact with environment variables
+   - For easier and simpler deployment of the project is used containerization technology `Docker`
 
-## Запуск проекта
-   - Клонируйте репозиторий https://github.com/pavel-akulich/educational_modules_app
-   - При помощи команды `docker compose up --build` соберите и запустите все сервисы
-   - После успешного выполнения предыдущего шага, приложение будет доступно по адресу http://localhost:8001/ или http://127.0.0.1:8001/
+## Run the Project
+   - Clone the repository https://github.com/pavel-akulich/educational_modules_app
+   - Using the `docker compose up --build` command, assemble and run all the services
+   - After successful completion of the previous step, the application will be available at http://localhost:8001/ or http://127.0.0.1:8001/
 
-## API документация
-После успешного запуска сервера API документация будет доступна по следующим адресам: http://localhost:8001/docs/ или http://localhost:8001/redoc/
+## API documentation
+After the API server is successfully launched, the documentation will be available at the following addresses: http://localhost:8001/docs/ or http://localhost:8001/redoc/
 
-## Примечания
-   - Проект может быть доработан и расширен для более широкого использования
-   - Переменные окружения, необходимые для работы проекта можно посмотреть в файле `.env.sample`
-   - Все необходимые зависимости находятся в файлах `pyproject.toml` и `poetry.lock`
+## Notes
+   - The project can be further developed and extended for broader use
+   - The environment variables required for the project to work can be viewed in the `.env.sample` file
+   - All the necessary dependencies are in the files `pyproject.toml` and `poetry.lock`
+
